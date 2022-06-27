@@ -1,0 +1,68 @@
+@use '../../vars.scss';
+
+.offer {
+  background-color: #fff;
+  max-width: 640px;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  border-radius: 15px;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgb(18 17 36 / 4%), 0 4px 32px rgb(18 17 36 / 8%);
+    transition: box-shadow 0.2s ease;
+  }
+
+  &__heading {
+    font-size: 18px;
+    margin: 0 0 15px;
+  }
+
+  &__description {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin: 5px 10px 5px 0;
+
+      &::before {
+        content: '🔥';
+        margin-right: 5px;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      background-color: $pink;
+      padding: 5px 15px;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 10px;
+      font-weight: 700;
+      user-select: none;
+
+      &:hover {
+        transition: transform .1s;
+        transform: scale(1.03);
+      }
+
+      &::before {
+        content: '👉';
+        margin-right: 10px;
+        @media (max-width: 375px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
