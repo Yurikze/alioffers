@@ -6,28 +6,54 @@
   <section class="offers">
 
     <?php
-    $homepageOffers = new WP_Query(array(
-      'posts_per_page' => 10,
-      'post_type' => 'deal'
+    $homepageFeaturedOffers = new WP_Query(array(
+      'posts_per_page' => -1,
+      'post_type' => 'deal',
+      'order' => 'ASC',
+      'meta_query' => array(
+        'featured' => array(
+          'key' => 'featured',
+          'compare' => '==',
+          'value' => true
+        )
+      )
     ));
+
+    $homepageOffers = new WP_Query(array(
+      'posts_per_page' => -1,
+      'post_type' => 'deal',
+      'order' => 'DESC',
+      'meta_query' => array(
+        array(
+          'key' => 'featured',
+          'compare' => '!=',
+          'value' => true
+        )
+      )
+    ));
+
+    while ($homepageFeaturedOffers->have_posts()) {
+      $homepageFeaturedOffers->the_post(); ?>
+      <article class="offers__item offer">
+        <?php the_field('featured'); ?>
+        <h4 class="offer__heading"><?php the_title(); ?></h4>
+        <?php the_content(); ?>
+      </article>
+
+    <?php }
 
     while ($homepageOffers->have_posts()) {
       $homepageOffers->the_post(); ?>
       <article class="offers__item offer">
+        <?php the_field('featured'); ?>
         <h4 class="offer__heading"><?php the_title(); ?></h4>
-        <p class="offer__description"><?php echo get_the_content(); ?></p>
-        <ul class="offer__list">
-          <li class="offer__item">
-            <p class="offer__item-text">Купоны продавцов</p>
-            <a href="#" class="offer__item-link">Показать!</a>
-          </li>
-        </ul>
+        <?php the_content(); ?>
       </article>
     <?php }
 
     ?>
 
-    <article class="offers__item offer">
+    <!-- <article class="offers__item offer">
       <h4 class="offer__heading">Промокоды от топ продавцов</h4>
       <p class="offer__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet error a in officiis, consequatur nemo illum quidem sint! Eos, dolores.</p>
       <ul class="offer__list">
@@ -36,7 +62,7 @@
           <a href="#" class="offer__item-link">Показать!</a>
         </li>
       </ul>
-    </article>
+    </article> -->
   </section>
   </main>
 
