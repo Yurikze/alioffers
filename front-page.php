@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <div class="main container">
-  <h1 class="main__heading"><?php bloginfo( 'name' ); ?></h1>
-  <p class="main__subheading"><?php bloginfo( 'description' ); ?></p>
+  <h1 class="main__heading"><?php bloginfo('name'); ?></h1>
+  <p class="main__subheading"><?php bloginfo('description'); ?></p>
   <section class="offers">
 
     <?php
@@ -62,8 +62,8 @@
       </ul>
     </article> -->
   </section>
-  </main>
+</div>
 
-  <?php get_footer();
+<?php get_footer();
 
-  ?>
+?>

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <div class="page">
   <header class="header">
     <div class="container">
       <img class="header__logo" src="<?php echo get_theme_file_uri('./images/alioffers_logo.svg'); ?>" alt="" />
