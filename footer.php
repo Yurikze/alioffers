@@ -8,7 +8,7 @@
       <li>+7 (988) 016-62-81</li>
     </ul>
   </div>
-  <iframe src="https://dhwnh.com/g/vv3q4oey1v9315a87f45b6d1781017/?erid=LatgBbQo6&subid=test" loading = "lazy" width="0" height="0" style="position: absolute; left: -1000px;"></iframe>
+  <iframe src="https://dhwnh.com/g/vv3q4oey1v9315a87f45b6d1781017/?erid=LatgBbQo6&subid=test" width="0" height="0" style="position: absolute; left: -1000px;"></iframe>
 </footer>
 </div>
 <?php wp_footer(); ?>
